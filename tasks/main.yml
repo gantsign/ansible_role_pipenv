@@ -1,2 +1,28 @@
 ---
-# tasks file for ansible_role_pipenv
+- name: install pip
+  become: yes
+  package:
+    name: python-pip
+    state: present
+
+# pip module seems to fail idempotence with --user
+- name: check if Pipenv installed
+  become: yes
+  become_user: '{{ item }}'
+  stat:
+    path: '~/.local/bin/pipenv'
+  register: pipenv_check
+  with_items: '{{ pipenv_users }}'
+
+- name: install Pipenv
+  become: yes
+  become_user: '{{ item.item }}'
+  pip:
+    name: pipenv
+    state: present
+    extra_args: --user
+  when:
+    - not item.stat.exists
+  loop_control:
+    label: "{{ item.item }}"
+  with_items: '{{ pipenv_check.results }}'
