@@ -13,7 +13,7 @@ for [Python](https://www.python.org) that combines
 Requirements
 ------------
 
-* Ansible >= 2.7
+* Ansible >= 2.8
 
 * Linux Distribution
 
