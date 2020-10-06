@@ -1,5 +1,5 @@
 ---
-- name: install pip
+- name: install system pip
   become: yes
   package:
     name: python-pip
@@ -14,10 +14,24 @@
   register: pipenv_check
   with_items: '{{ pipenv_users }}'
 
+- name: install user pip
+  become: yes
+  become_user: '{{ item.item }}'
+  pip:
+    name: pip
+    state: present
+    extra_args: --user
+  when:
+    - not item.stat.exists
+  loop_control:
+    label: "{{ item.item }}"
+  with_items: '{{ pipenv_check.results }}'
+
 - name: install Pipenv
   become: yes
   become_user: '{{ item.item }}'
   pip:
+    executable: '~/.local/bin/pip'
     name: pipenv
     state: present
     extra_args: --user
