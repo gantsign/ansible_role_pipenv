@@ -2,7 +2,7 @@
 - name: install system pip
   become: yes
   package:
-    name: python-pip
+    name: 'python{{ pipenv_python_version_suffix }}-pip'
     state: present
 
 # pip module seems to fail idempotence with --user
