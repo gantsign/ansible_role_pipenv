@@ -22,6 +22,7 @@ Requirements
         * Ubuntu
 
             * Bionic (18.04)
+            * Focal (20.04)
 
 Role Variables
 --------------
