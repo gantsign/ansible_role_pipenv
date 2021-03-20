@@ -1,7 +1,7 @@
 Ansible Role: Pipenv
 ====================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible_role_pipenv.svg?branch=master)](https://travis-ci.com/gantsign/ansible_role_pipenv)
+[![Tests](https://github.com/gantsign/ansible_role_pipenv/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible_role_pipenv/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.pipenv-blue.svg)](https://galaxy.ansible.com/gantsign/pipenv)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_pipenv/master/LICENSE)
 
