@@ -2,7 +2,7 @@
 - name: install system pip
   become: yes
   package:
-    name: 'python{{ pipenv_python_version_suffix }}-pip'
+    name: python3-pip
     state: present
 
 # pip module seems to fail idempotence with --user
@@ -14,24 +14,11 @@
   register: pipenv_check
   with_items: '{{ pipenv_users }}'
 
-- name: install user pip
-  become: yes
-  become_user: '{{ item.item }}'
-  pip:
-    name: pip
-    state: present
-    extra_args: --user
-  when:
-    - not item.stat.exists
-  loop_control:
-    label: "{{ item.item }}"
-  with_items: '{{ pipenv_check.results }}'
-
 - name: install Pipenv
   become: yes
   become_user: '{{ item.item }}'
   pip:
-    executable: '~/.local/bin/pip'
+    executable: '/usr/bin/pip3'
     name: pipenv
     state: present
     extra_args: --user

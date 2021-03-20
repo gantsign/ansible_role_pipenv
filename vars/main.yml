@@ -1,6 +1,2 @@
 ---
-# The major version of Python being used
-pipenv_python_version: "{{ ansible_python_version | regex_replace('^([0-9]+)\\..*$', '\\1') }}"
-
-# The version suffix to use on system Python packages
-pipenv_python_version_suffix: "{{ (pipenv_python_version == '2') | ternary('', pipenv_python_version) }}"
+# vars file for ansible_role_pipenv
