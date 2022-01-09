@@ -85,7 +85,7 @@ antigen bundle gantsign/zsh-plugins pipenv
 To manually configure Zsh add the following to your `.zshrc`:
 
 ```bash
-eval "$(pipenv --completion)"
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 ```
 
 More Roles From GantSign
