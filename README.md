@@ -5,8 +5,8 @@ Ansible Role: Pipenv
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.pipenv-blue.svg)](https://galaxy.ansible.com/gantsign/pipenv)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_pipenv/master/LICENSE)
 
-Role to download and install [Pipenv](https://pipenv.sh) the package manager
-for [Python](https://www.python.org) that combines
+Role to download and install [Pipenv](https://pipenv.pypa.io/) the package
+manager for [Python](https://www.python.org) that combines
 [pip](https://pypi.org/project/pip/) with
 [Virtualenv](https://virtualenv.pypa.io/en/stable/).
 
